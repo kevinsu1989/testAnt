@@ -1,0 +1,25 @@
+<project name="videoPlayer" default="build" basedir="/Users/sukan/workspace/flash/testAnt">
+<!--指定properties文件-->
+    <property file="build/build.properties"/>
+    <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+    <target name="build">
+        <echo>-------------------------项目编译开始----------------------------------</echo>
+        <antcall target="clean"/>
+        <antcall target="compile">
+            <param name="projectName" value="testflash"/>
+        </antcall>
+        <echo>-------------------------项目编译完成----------------------------------</echo>
+    </target>
+    
+    <target name="clean">
+ 		
+    </target>
+    
+    <target name="compile">
+         <mxmlc
+            file="${SOURCE_DIR}/TestAnt.as"
+            output="${OUTPUT_DIR}/imgotv.swf"
+            debug="false"
+            />
+    </target>
+</project>
